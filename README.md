@@ -39,14 +39,14 @@
             - [Remote - SSH: Editing Configuration Files](#remote---ssh-editing-configuration-files)
             - [Remote Explorer](#remote-explorer)
          - [Remote - Tunnels](#remote---tunnels)
-      - [IntelliCode](#intellicode)
-         - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
-      - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
+   - [Terraform](#terraform)
+      - [HashiCorp Terraform](#hashicorp-terraform)
    - [HTML](#html)
       - [HTML CSS Support](#html-css-support)
       - [Auto Rename Tag](#auto-rename-tag)
       - [Highlight Matching Tag](#highlight-matching-tag)
       - [Live Server](#live-server)
+      - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
    - [CSS](#css)
       - [CSS Peek](#css-peek)
       - [Stylelint](#stylelint)
@@ -54,8 +54,8 @@
       - [ESLint](#eslint)
       - [Prettier](#prettier)
       - [npm Intellisense](#npm-intellisense)
-   - [Terraform](#terraform)
-      - [HashiCorp Terraform](#hashicorp-terraform)
+      - [IntelliCode](#intellicode)
+         - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
 
 ## 拡張機能
 
@@ -262,21 +262,19 @@ Remote SSH か Remote Tunnels をインストールすると付いてくる。
 
 トンネル接続先の環境をVSCodeを利用できるようなる。
 
+### Terraform
+
+```bash
+code --install-extension hashicorp.terraform
+```
+
+#### HashiCorp Terraform
+
+Terraformの`Validate`、`Format`、`IntelliSense`、`Syntax highlighting`、`Code Snippets`などが行える。
 
 
-#### IntelliCode
 
-`JavaScript`, `TypeScript`, `Python`, `Java`. `T-SQL`の入力補完を行う拡張機能。
 
-対象のSampleをGitHubから持ってきてくれる機能も持つ。
-
-##### IntelliCode API Usage Examples
-
-対象のSampleをGitHubから持ってきてくれる機能のAPI版。
-
-#### Microsoft Edge Tools for VS Code
-
-vscode上でEdgeが開ける他、HTMLのLinter効果もある。
 
 
 
@@ -307,6 +305,10 @@ HTMLタグを選択するともう片方を含めてハイライト表示され�
 
 HTMLをvscode内でリアルタイム表示できる。
 
+#### Microsoft Edge Tools for VS Code
+
+vscode上でEdgeが開ける他、HTMLのLinter効果もある。
+
 ### CSS
 
 #### CSS Peek
@@ -328,8 +330,12 @@ CSSとHTMLの関連づけを行ってくれる。
 
 npmの入力補完が効くようになる。
 
-### Terraform
+#### IntelliCode
 
-#### HashiCorp Terraform
+`JavaScript`, `TypeScript`, `Python`, `Java`. `T-SQL`の入力補完を行う拡張機能。
 
-Terraformの`IntelliSense`や`Syntax highlighting`や`Code Snippets`などが行える。
+対象のSampleをGitHubから持ってきてくれる機能も持つ。
+
+##### IntelliCode API Usage Examples
+
+対象のSampleをGitHubから持ってきてくれる機能のAPI版。

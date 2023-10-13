@@ -46,8 +46,15 @@
   //   "dockercompose",
   // ],
   // ここでは重複エラーが出るのでコメントアウト(最低限設定したいWorkspace設定のスペル設定)
-  /* あ */
-  // KubernetesはYAMLファイルのハッシュ部分をインデントしないのが公式記法なので以下をYAMLの設定と置き換える
+  /* Terraform */
+  "[terraform][terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  },
+  "terraform.experimentalFeatures.validateOnSave": true,
+  /* Python */
+  /* Web */
+  /* Kubernetes */
+  // YAMLファイルのハッシュ部分をインデントしないのが公式記法なので以下をYAMLの設定と置き換える
   // 参考: (https://amateur-engineer-blog.com/vscode-kubernetes-yaml-formatter/)
   // "[yaml]": {
   //   "editor.formatOnSave": false,
