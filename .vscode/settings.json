@@ -1,0 +1,78 @@
+{
+  /* 最低限設定したいWorkspace設定 */
+  "extensions.ignoreRecommendations": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[markdown]": {
+    "editor.tabSize": 3,
+    "files.trimTrailingWhitespace": false,
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+  },
+  // Extension: Markdown All in One
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.slugifyMode": "github",
+  // Extension: markdownlint
+  "markdownlint.config": {
+    "MD007": {
+      "indent": 3
+    },
+    "MD033": false // インラインHTMLの制限を解除
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml", // Extension: YAML
+  },
+  "yaml.format.printWidth": 119,
+  "yaml.format.singleQuote": true,
+  "[dockerfile][dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker", // Extension: Docker
+  },
+  "[log]": {
+    "editor.formatOnSave": false,
+  },
+  "[csv]": {
+    "editor.formatOnSave": false,
+  },
+  // "cSpell.words": [
+  //   "azuretools",
+  //   "dockercompose",
+  // ],
+  // ここでは重複エラーが出るのでコメントアウト(最低限設定したいWorkspace設定のスペル設定)
+  /* あ */
+  // KubernetesはYAMLファイルのハッシュ部分をインデントしないのが公式記法なので以下をYAMLの設定と置き換える
+  // 参考: (https://amateur-engineer-blog.com/vscode-kubernetes-yaml-formatter/)
+  // "[yaml]": {
+  //   "editor.formatOnSave": false,
+  // },
+  // "yaml.format.enable": false,
+  "cSpell.words": [
+    "bpruitt",
+    "CEINTL",
+    "chrmarti",
+    "davidanson",
+    "eamodio",
+    "emilast",
+    "errorlens",
+    "extensionpack",
+    "Graphviz",
+    "Gruntfuggly",
+    "jebbs",
+    "kohler",
+    "mechatroner",
+    "mhutchie",
+    "oderwat",
+    "plantuml",
+    "usernamehw",
+    "wayou",
+    "yzane",
+    "yzhang"
+  ],
+}
