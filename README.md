@@ -25,6 +25,8 @@
    - [必須ではないが効率化につながる拡張機能(重要度:中)](#必須ではないが効率化につながる拡張機能重要度中)
       - [GitLens](#gitlens)
       - [Git Graph](#git-graph)
+      - [IntelliCode](#intellicode)
+         - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
       - [Japanese Language Pack for Visual Studio Code](#japanese-language-pack-for-visual-studio-code)
       - [markdown PDF](#markdown-pdf)
       - [Output Colorizer](#output-colorizer)
@@ -54,8 +56,6 @@
       - [ESLint](#eslint)
       - [Prettier](#prettier)
       - [npm Intellisense](#npm-intellisense)
-      - [IntelliCode](#intellicode)
-         - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
 
 ## 拡張機能
 
@@ -179,7 +179,7 @@ vscodeのファイルやフォルダにアイコンを付けてファイルの�
 必須とまではいかないが入れておいて損のない拡張機能。入れないとしたら、どうしてもストレージ容量が足りない場合くらいか。
 
 ```bash
-code --install-extension eamodio.gitlens --install-extension mhutchie.git-graph --install-extension MS-CEINTL.vscode-language-pack-ja --install-extension yzane.markdown-pdf --install-extension IBM.output-colorizer --install-extension ryu1kn.partial-diff --install-extension mechatroner.rainbow-csv --install-extension chrmarti.regex
+code --install-extension eamodio.gitlens --install-extension mhutchie.git-graph --install-extension VisualStudioExptTeam.vscodeintellicode --install-extension MS-CEINTL.vscode-language-pack-ja --install-extension yzane.markdown-pdf --install-extension IBM.output-colorizer --install-extension ryu1kn.partial-diff --install-extension mechatroner.rainbow-csv --install-extension chrmarti.regex
 ```
 
 #### GitLens
@@ -189,6 +189,16 @@ Gitのコミット内容をvscode内で分かりやすく表示することが�
 #### Git Graph
 
 Gitの履歴を分かりやすく表示することが可能。
+
+#### IntelliCode
+
+`JavaScript`, `TypeScript`, `Python`, `Java`. `T-SQL`の入力補完を行う拡張機能。
+
+対象のSampleをGitHubから持ってきてくれる機能も持つ。
+
+##### IntelliCode API Usage Examples
+
+対象のSampleをGitHubから持ってきてくれる機能のAPI版。
 
 #### Japanese Language Pack for Visual Studio Code
 
@@ -330,12 +340,4 @@ CSSとHTMLの関連づけを行ってくれる。
 
 npmの入力補完が効くようになる。
 
-#### IntelliCode
 
-`JavaScript`, `TypeScript`, `Python`, `Java`. `T-SQL`の入力補完を行う拡張機能。
-
-対象のSampleをGitHubから持ってきてくれる機能も持つ。
-
-##### IntelliCode API Usage Examples
-
-対象のSampleをGitHubから持ってきてくれる機能のAPI版。
