@@ -12,6 +12,7 @@
       - [YAML](#yaml)
       - [Docker](#docker)
    - [必須ではないが効率化につながる拡張機能(重要度:高)](#必須ではないが効率化につながる拡張機能重要度高)
+      - [DotENV](#dotenv)
       - [ErrorLens](#errorlens)
       - [indent-rainbow](#indent-rainbow)
       - [Markdown Preview Enhanced](#markdown-preview-enhanced)
@@ -19,20 +20,17 @@
       - [Log File Highlighter](#log-file-highlighter)
       - [Path Intellisense](#path-intellisense)
       - [PlantUML](#plantuml)
-      - [TODO Highlight](#todo-highlight)
-      - [Todo Tree](#todo-tree)
       - [vscode-icons](#vscode-icons)
    - [必須ではないが効率化につながる拡張機能(重要度:中)](#必須ではないが効率化につながる拡張機能重要度中)
-      - [GitLens](#gitlens)
-      - [Git Graph](#git-graph)
       - [IntelliCode](#intellicode)
          - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
       - [Japanese Language Pack for Visual Studio Code](#japanese-language-pack-for-visual-studio-code)
-      - [markdown PDF](#markdown-pdf)
+      - [Markdown PDF](#markdown-pdf)
       - [Output Colorizer](#output-colorizer)
       - [Partial Diff](#partial-diff)
       - [Rainbow CSV](#rainbow-csv)
       - [Regex Previewer](#regex-previewer)
+      - [TODO Highlight](#todo-highlight)
    - [リモート関係の拡張機能(分類が特殊なため別枠)](#リモート関係の拡張機能分類が特殊なため別枠)
       - [Remote Development](#remote-development)
          - [WSL](#wsl)
@@ -124,8 +122,12 @@ YAMLファイルのフォーマットや入力補完を行える。Kubernetesプ
 システムに関わらずVSCode全般の作業において利便性が向上する拡張機能。
 
 ```bash
-code --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension wayou.vscode-todo-highlight --install-extension Gruntfuggly.todo-tree --install-extension vscode-icons-team.vscode-icons
+code --install-extension mikestead.dotenv --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension vscode-icons-team.vscode-icons
 ```
+
+#### DotENV
+
+`.env`に色がついて見やすくなる。
 
 #### ErrorLens
 
@@ -162,14 +164,6 @@ logファイルをハイライト表示して見やすくする。
 
 PlantUMLのハイライト、スニペット、VSCode上での生成などの機能を持つ。基本的には`Graphviz`がインストールされている環境でないと描画できない図が多い。
 
-#### TODO Highlight
-
-ToDoをハイライト表示して分かりやすくする。
-
-#### Todo Tree
-
-ToDoの一覧をサイドバーで管理できる。
-
 #### vscode-icons
 
 vscodeのファイルやフォルダにアイコンを付けてファイルの種別を分かりやすくする。
@@ -179,16 +173,8 @@ vscodeのファイルやフォルダにアイコンを付けてファイルの�
 必須とまではいかないが入れておいて損のない拡張機能。入れないとしたら、どうしてもストレージ容量が足りない場合くらいか。
 
 ```bash
-code --install-extension eamodio.gitlens --install-extension mhutchie.git-graph --install-extension VisualStudioExptTeam.vscodeintellicode --install-extension MS-CEINTL.vscode-language-pack-ja --install-extension yzane.markdown-pdf --install-extension IBM.output-colorizer --install-extension ryu1kn.partial-diff --install-extension mechatroner.rainbow-csv --install-extension chrmarti.regex
+code --install-extension VisualStudioExptTeam.vscodeintellicode --install-extension MS-CEINTL.vscode-language-pack-ja --install-extension yzane.markdown-pdf --install-extension IBM.output-colorizer --install-extension ryu1kn.partial-diff --install-extension mechatroner.rainbow-csv --install-extension chrmarti.regex --install-extension wayou.vscode-todo-highlight
 ```
-
-#### GitLens
-
-Gitのコミット内容をvscode内で分かりやすく表示することが可能。
-
-#### Git Graph
-
-Gitの履歴を分かりやすく表示することが可能。
 
 #### IntelliCode
 
@@ -204,7 +190,7 @@ Gitの履歴を分かりやすく表示することが可能。
 
 日本語化する。コマンドパレットからLanguageを変更しないといけない場合もある。
 
-#### markdown PDF
+#### Markdown PDF
 
 Markdownで高精度なPDF出力が可能になる。
 
@@ -223,6 +209,10 @@ CSVファイルに色を付けて見やすくする。
 #### Regex Previewer
 
 正規表現のプレビューを表示することができる機能。
+
+#### TODO Highlight
+
+ToDoをハイライト表示して分かりやすくする。
 
 ### リモート関係の拡張機能(分類が特殊なため別枠)
 
@@ -339,5 +329,3 @@ CSSとHTMLの関連づけを行ってくれる。
 #### npm Intellisense
 
 npmの入力補完が効くようになる。
-
-
