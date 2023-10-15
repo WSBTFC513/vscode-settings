@@ -21,6 +21,8 @@
       - [Path Intellisense](#path-intellisense)
       - [PlantUML](#plantuml)
       - [vscode-icons](#vscode-icons)
+      - [Night Owl](#night-owl)
+      - [Code Runner](#code-runner)
    - [必須ではないが効率化につながる拡張機能(重要度:中)](#必須ではないが効率化につながる拡張機能重要度中)
       - [IntelliCode](#intellicode)
          - [IntelliCode API Usage Examples](#intellicode-api-usage-examples)
@@ -39,21 +41,21 @@
             - [Remote - SSH: Editing Configuration Files](#remote---ssh-editing-configuration-files)
             - [Remote Explorer](#remote-explorer)
          - [Remote - Tunnels](#remote---tunnels)
-   - [Terraform](#terraform)
-      - [HashiCorp Terraform](#hashicorp-terraform)
-   - [HTML](#html)
-      - [HTML CSS Support](#html-css-support)
+   - [Web系()](#web系)
       - [Auto Rename Tag](#auto-rename-tag)
-      - [Highlight Matching Tag](#highlight-matching-tag)
-      - [Live Server](#live-server)
-      - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
-   - [CSS](#css)
       - [CSS Peek](#css-peek)
+      - [Highlight Matching Tag](#highlight-matching-tag)
+      - [HTML CSS Support](#html-css-support)
+      - [Live Server](#live-server)
+      - [JavaScript (ES6) code snippets](#javascript-es6-code-snippets)
+      - [npm Intellisense](#npm-intellisense)
+   - [Web系(Linter, Formatter)](#web系linter-formatter)
+      - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
       - [Stylelint](#stylelint)
-   - [JavaScript](#javascript)
       - [ESLint](#eslint)
       - [Prettier](#prettier)
-      - [npm Intellisense](#npm-intellisense)
+   - [Terraform](#terraform)
+      - [HashiCorp Terraform](#hashicorp-terraform)
 
 ## 拡張機能
 
@@ -122,7 +124,7 @@ YAMLファイルのフォーマットや入力補完を行える。Kubernetesプ
 システムに関わらずVSCode全般の作業において利便性が向上する拡張機能。
 
 ```bash
-code --install-extension mikestead.dotenv --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension vscode-icons-team.vscode-icons
+code --install-extension mikestead.dotenv --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension vscode-icons-team.vscode-icons --install-extension sdras.night-owl --install-extension formulahendry.code-runner
 ```
 
 #### DotENV
@@ -167,6 +169,20 @@ PlantUMLのハイライト、スニペット、VSCode上での生成などの機
 #### vscode-icons
 
 vscodeのファイルやフォルダにアイコンを付けてファイルの種別を分かりやすくする。
+
+#### Night Owl
+
+vscodeのカラーテーマ。最終的には好みなんですが、目に優しく且つ色覚異常まで考えられた配色になっているので、こだわりが無いのであれば採用すると良いでしょう。イタリック調を含まないようにするかどうかは完全に好み。
+
+```json
+{
+  "workbench.colorTheme": "Night Owl",
+}
+```
+
+#### Code Runner
+
+プログラムを簡易的に実行可能な拡張機能。デバッグにうれしい。広範囲の言語に対応しています。
 
 ### 必須ではないが効率化につながる拡張機能(重要度:中)
 
@@ -262,6 +278,82 @@ Remote SSH か Remote Tunnels をインストールすると付いてくる。
 
 トンネル接続先の環境をVSCodeを利用できるようなる。
 
+### Web系()
+
+`HTML`, `CSS`, `JavaScript`でフレームワークに依存しないものをカテゴライズします。有力なものでも入力補完を行う`IntelliCode`と`Path Intellisense`の拡張機能は、全般的なやつで紹介済みです。（他の言語でも効くため）
+
+```bash
+code --install-extension formulahendry.auto-rename-tag --install-extension pranaygp.vscode-css-peek --install-extension vincaslt.highlight-matching-tag --install-extension ecmel.vscode-html-css --install-extension ritwickdey.LiveServer --install-extension xabikos.JavaScriptSnippets --install-extension christian-kohler.npm-intellisense
+```
+
+#### Auto Rename Tag
+
+HTMLタグの片方をリネームすると対応したもう片方のタグも同時にリネームされる。
+
+#### CSS Peek
+
+CSSとHTMLの関連づけを行ってくれる。HTMLコード内でCSSの該当情報を確認したり、F12で飛んだりできる。
+
+#### Highlight Matching Tag
+
+HTMLタグを選択するともう片方を含めてハイライト表示される。
+
+#### HTML CSS Support
+
+HTMLとCSSの`idやclassの入力補完`、`Validate`などを行ってくれる。
+
+#### Live Server
+
+vscodeでローカルホストサーバを即席で作り、HTMLの内容をリアルタイムで表示できる。
+
+#### JavaScript (ES6) code snippets
+
+JavaScriptやTypeScriptの入力補完が利くようになる。
+
+#### npm Intellisense
+
+npmの入力補完が効くようになる。
+
+### Web系(Linter, Formatter)
+
+```bash
+code --install-extension ms-edgedevtools.vscode-edge-devtools --install-extension stylelint.vscode-stylelint --install-extension dbaeumer.vscode-eslint --install-extension esbenp.prettier-vscode
+```
+
+
+
+有効にする場合は、`settings.json`で以下の設定を記述して、ビルトインのValidateを解除する。これはユーザー設定に書くとStylelintの無い状態で完全にValidateがかからなくなるのでワークスペース内のみに書くこと。
+
+```json
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+}
+```
+
+#### Microsoft Edge Tools for VS Code
+
+vscode上でEdgeが開ける他、HTMLのLinter効果(webhint)もある。CSSのStylelintやJavaScriptのESLintと異なり、ライブラリとしてインストールされたものを参照するわけではないので、CI/CDとバージョンが合わない等で困る場合はsettings.jsonから`"vscode-edge-devtools.webhint": false`で設定を切ってしまうか`.hintrc`で除外してしまう。
+
+#### Stylelint
+
+CSSのLinterとなる。拡張機能だけで動くことは無く、ワークスペースにStylelintがインストールされているかを確認して自動でVSCodeと連携してくれる。（ちなみにワークスペースに無い場合はグローバルも探してくれる）
+
+
+
+#### ESLint
+
+JavaScriptやTypeScriptのLinterとなる。
+
+#### Prettier
+
+Web系ファイルの総合的なFormatter。
+
+
+
+
+
 ### Terraform
 
 ```bash
@@ -271,61 +363,3 @@ code --install-extension hashicorp.terraform
 #### HashiCorp Terraform
 
 Terraformの`Validate`、`Format`、`IntelliSense`、`Syntax highlighting`、`Code Snippets`などが行える。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### HTML
-
-#### HTML CSS Support
-
-HTMLとCSSの`idやclassの補完`、`Validate`などを行ってくれる。
-
-#### Auto Rename Tag
-
-HTMLタグの片方をリネームすると対応したもう片方のタグも同時にリネームされる。
-
-#### Highlight Matching Tag
-
-HTMLタグを選択するともう片方を含めてハイライト表示される。
-
-#### Live Server
-
-HTMLをvscode内でリアルタイム表示できる。
-
-#### Microsoft Edge Tools for VS Code
-
-vscode上でEdgeが開ける他、HTMLのLinter効果もある。
-
-### CSS
-
-#### CSS Peek
-
-CSSとHTMLの関連づけを行ってくれる。
-
-#### Stylelint
-
-
-### JavaScript
-
-#### ESLint
-
-
-#### Prettier
-
-
-#### npm Intellisense
-
-npmの入力補完が効くようになる。

@@ -47,13 +47,40 @@
   //   "dockercompose",
   // ],
   // ここでは重複エラーが出るのでコメントアウト(最低限設定したいWorkspace設定のスペル設定)
+  /* Web */
+  "[html][css][javascript][typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Extension: Prettier
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true, // Extension: ESLint
+      "source.fixAll.stylelint": true, // Extension: Stylelint
+    }
+  },
+  // Extension: Path Intellisense(JSとTSはビルトインの機能を切る)
+  "javascript.suggest.paths": false,
+  "typescript.suggest.paths": false,
+  // Extension: Stylelint
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // Extension: Prettier
+  "prettier.printWidth": 119,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true, // TODO:???
+  /* Python */
+  "[python]": {
+    "editor.tabSize": 4,
+  },
+  /* Unity */
+  "[csharp]": {
+    "editor.tabSize": 4,
+  },
+  /* Shell Script */
+  "[shellscript]": {},
   /* Terraform */
   "[terraform][terraform-vars]": {
     "editor.defaultFormatter": "hashicorp.terraform",
   },
   "terraform.experimentalFeatures.validateOnSave": true,
-  /* Python */
-  /* Web */
   /* Kubernetes */
   // YAMLファイルのハッシュ部分をインデントしないのが公式記法なので以下をYAMLの設定と置き換える
   // 参考: (https://amateur-engineer-blog.com/vscode-kubernetes-yaml-formatter/)
@@ -66,20 +93,33 @@
     "CEINTL",
     "chrmarti",
     "davidanson",
+    "dbaeumer",
+    "ecmel",
+    "edgedevtools",
     "emilast",
     "errorlens",
+    "esbenp",
     "Expt",
     "extensionpack",
+    "formulahendry",
     "Graphviz",
+    "hintrc",
     "jebbs",
     "kohler",
     "mechatroner",
     "mikestead",
     "oderwat",
     "plantuml",
+    "pranaygp",
+    "ritwickdey",
+    "sdras",
+    "Stylelint",
     "usernamehw",
+    "vincaslt",
     "vscodeintellicode",
     "wayou",
+    "webhint",
+    "xabikos",
     "yzane",
     "yzhang"
   ],
