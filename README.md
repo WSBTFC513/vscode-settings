@@ -49,6 +49,7 @@
       - [Live Server](#live-server)
       - [JavaScript (ES6) code snippets](#javascript-es6-code-snippets)
       - [npm Intellisense](#npm-intellisense)
+      - [Document This](#document-this)
    - [Web系(Linter, Formatter)](#web系linter-formatter)
       - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
       - [Stylelint](#stylelint)
@@ -283,7 +284,7 @@ Remote SSH か Remote Tunnels をインストールすると付いてくる。
 `HTML`, `CSS`, `JavaScript`でフレームワークに依存しないものをカテゴライズします。有力なものでも入力補完を行う`IntelliCode`と`Path Intellisense`の拡張機能は、全般的なやつで紹介済みです。（他の言語でも効くため）
 
 ```bash
-code --install-extension formulahendry.auto-rename-tag --install-extension pranaygp.vscode-css-peek --install-extension vincaslt.highlight-matching-tag --install-extension ecmel.vscode-html-css --install-extension ritwickdey.LiveServer --install-extension xabikos.JavaScriptSnippets --install-extension christian-kohler.npm-intellisense
+code --install-extension formulahendry.auto-rename-tag --install-extension pranaygp.vscode-css-peek --install-extension vincaslt.highlight-matching-tag --install-extension ecmel.vscode-html-css --install-extension ritwickdey.LiveServer --install-extension xabikos.JavaScriptSnippets --install-extension christian-kohler.npm-intellisense --install-extension oouo-diogo-perdigao.docthis
 ```
 
 #### Auto Rename Tag
@@ -314,13 +315,23 @@ JavaScriptやTypeScriptの入力補完が利くようになる。
 
 npmの入力補完が効くようになる。
 
+#### Document This
+
+JavaScript及びTypeScriptのドキュメントコードを生成できる拡張機能。
+
 ### Web系(Linter, Formatter)
 
 ```bash
 code --install-extension ms-edgedevtools.vscode-edge-devtools --install-extension stylelint.vscode-stylelint --install-extension dbaeumer.vscode-eslint --install-extension esbenp.prettier-vscode
 ```
 
+#### Microsoft Edge Tools for VS Code
 
+vscode上でEdgeが開ける他、HTMLのLinter効果(webhint)もある。CSSのStylelintやJavaScriptのESLintと異なり、ライブラリとしてインストールされたものを参照するわけではないので、CI/CDとバージョンが合わない等で困る場合はsettings.jsonから`"vscode-edge-devtools.webhint": false`で設定を切ってしまうか`.hintrc`で除外してしまう。
+
+#### Stylelint
+
+CSSのLinterとなる。拡張機能だけで動くことは無く、ワークスペースにStylelintがインストールされているかを確認して自動でVSCodeと連携してくれる。（ちなみにワークスペースに無い場合はグローバルも探してくれる）
 
 有効にする場合は、`settings.json`で以下の設定を記述して、ビルトインのValidateを解除する。これはユーザー設定に書くとStylelintの無い状態で完全にValidateがかからなくなるのでワークスペース内のみに書くこと。
 
@@ -332,27 +343,23 @@ code --install-extension ms-edgedevtools.vscode-edge-devtools --install-extensio
 }
 ```
 
-#### Microsoft Edge Tools for VS Code
-
-vscode上でEdgeが開ける他、HTMLのLinter効果(webhint)もある。CSSのStylelintやJavaScriptのESLintと異なり、ライブラリとしてインストールされたものを参照するわけではないので、CI/CDとバージョンが合わない等で困る場合はsettings.jsonから`"vscode-edge-devtools.webhint": false`で設定を切ってしまうか`.hintrc`で除外してしまう。
-
-#### Stylelint
-
-CSSのLinterとなる。拡張機能だけで動くことは無く、ワークスペースにStylelintがインストールされているかを確認して自動でVSCodeと連携してくれる。（ちなみにワークスペースに無い場合はグローバルも探してくれる）
-
-
+自動で探せない場合や何らかの理由で特定場所のStylelintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
 
 #### ESLint
 
-JavaScriptやTypeScriptのLinterとなる。
+JavaScriptやTypeScriptのLinterとなる。拡張機能だけで動くことは無く、ワークスペースにESLintがインストールされているかを確認して自動でVSCodeと連携してくれる。（ちなみにワークスペースに無い場合はグローバルも探してくれる）
+
+自動で探せない場合や何らかの理由で特定場所のESLintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
 
 #### Prettier
 
-Web系ファイルの総合的なFormatter。
+Web系ファイルの総合的なFormatter。ワークスペースにPrettierがインストールされていなくても動くが、Pathを指定したほうがバージョンを統一できてチーム開発的には良い。
 
+settings.jsonに設定を書いても良いが、`prettierrc`系のファイルを用意するとオーバーライドされます。
 
+何らかの理由で特定場所のESLintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
 
-
+JSはシングルクォート、JSXはダブルクォートがベストプラクティスではあるので、カスタム設定がおすすめとなる。
 
 ### Terraform
 

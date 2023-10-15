@@ -65,7 +65,6 @@
   // Extension: Prettier
   "prettier.printWidth": 119,
   "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true, // TODO:???
   /* Python */
   "[python]": {
     "editor.tabSize": 4,
@@ -94,6 +93,8 @@
     "chrmarti",
     "davidanson",
     "dbaeumer",
+    "diogo",
+    "docthis",
     "ecmel",
     "edgedevtools",
     "emilast",
@@ -109,6 +110,8 @@
     "mechatroner",
     "mikestead",
     "oderwat",
+    "oouo",
+    "perdigao",
     "plantuml",
     "pranaygp",
     "ritwickdey",
