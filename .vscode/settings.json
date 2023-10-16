@@ -62,9 +62,22 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
+  // "stylelint.stylelintPath": "./node_modules/stylelint", // 自動で検出されない場合に有効化
+  // "stylelint.configFile": "<stylelintrcのPath>", // 自動で検出されない場合に有効化
+  // "stylelint.config"や"stylelint.configBasedir"の設定で複雑化したStylelintのカスタムも可能
+  // Extension: ESLint
+  // "eslint.nodePath": "./node_modules/eslint", // 自動で検出されない場合に有効化
+  // "eslint.options"の設定で複雑化したESlintのカスタムも可能(ConfigfilePathの指定もここ)
   // Extension: Prettier
-  "prettier.printWidth": 119,
-  "prettier.singleQuote": true,
+  "prettier.requireConfig": true,
+  // "prettier.prettierPath": "./node_modules/prettier", // ローカルパッケージ使わない場合は削除
+  // "prettier.configPath": "<prettierrcのPath>", // "~/.prettierrc"以外の時に有効化する
+  // "cSpell.words": [
+  //   "azuretools",
+  //   "dockercompose",
+  //   "Parens",
+  // ],
+  // ここでは重複エラーが出るのでコメントアウト(最低限設定+Web系設定のスペル設定)
   /* Python */
   "[python]": {
     "editor.tabSize": 4,
@@ -75,11 +88,40 @@
   },
   /* Shell Script */
   "[shellscript]": {},
-  /* Terraform */
+  /* IaC */
   "[terraform][terraform-vars]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.defaultFormatter": "hashicorp.terraform", // Extension: HashiCorp Terraform
   },
+  // Extension: HashiCorp Terraform
   "terraform.experimentalFeatures.validateOnSave": true,
+  // Extension: YAML
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ], // AWS CloudFormation用
   /* Kubernetes */
   // YAMLファイルのハッシュ部分をインデントしないのが公式記法なので以下をYAMLの設定と置き換える
   // 参考: (https://amateur-engineer-blog.com/vscode-kubernetes-yaml-formatter/)
@@ -111,6 +153,8 @@
     "mikestead",
     "oderwat",
     "oouo",
+    "Orta",
+    "Parens",
     "perdigao",
     "plantuml",
     "pranaygp",

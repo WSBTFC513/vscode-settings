@@ -20,7 +20,7 @@
       - [Log File Highlighter](#log-file-highlighter)
       - [Path Intellisense](#path-intellisense)
       - [PlantUML](#plantuml)
-      - [vscode-icons](#vscode-icons)
+      - [Material Icon Theme](#material-icon-theme)
       - [Night Owl](#night-owl)
       - [Code Runner](#code-runner)
    - [必須ではないが効率化につながる拡張機能(重要度:中)](#必須ではないが効率化につながる拡張機能重要度中)
@@ -41,7 +41,7 @@
             - [Remote - SSH: Editing Configuration Files](#remote---ssh-editing-configuration-files)
             - [Remote Explorer](#remote-explorer)
          - [Remote - Tunnels](#remote---tunnels)
-   - [Web系()](#web系)
+   - [Web系(効率化)](#web系効率化)
       - [Auto Rename Tag](#auto-rename-tag)
       - [CSS Peek](#css-peek)
       - [Highlight Matching Tag](#highlight-matching-tag)
@@ -50,6 +50,7 @@
       - [JavaScript (ES6) code snippets](#javascript-es6-code-snippets)
       - [npm Intellisense](#npm-intellisense)
       - [Document This](#document-this)
+      - [Jest](#jest)
    - [Web系(Linter, Formatter)](#web系linter-formatter)
       - [Microsoft Edge Tools for VS Code](#microsoft-edge-tools-for-vs-code)
       - [Stylelint](#stylelint)
@@ -125,7 +126,7 @@ YAMLファイルのフォーマットや入力補完を行える。Kubernetesプ
 システムに関わらずVSCode全般の作業において利便性が向上する拡張機能。
 
 ```bash
-code --install-extension mikestead.dotenv --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension vscode-icons-team.vscode-icons --install-extension sdras.night-owl --install-extension formulahendry.code-runner
+code --install-extension mikestead.dotenv --install-extension usernamehw.errorlens --install-extension oderwat.indent-rainbow --install-extension shd101wyy.markdown-preview-enhanced --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting --install-extension emilast.LogFileHighlighter --install-extension christian-kohler.path-intellisense --install-extension jebbs.plantuml --install-extension PKief.material-icon-theme --install-extension sdras.night-owl --install-extension formulahendry.code-runner
 ```
 
 #### DotENV
@@ -167,7 +168,7 @@ logファイルをハイライト表示して見やすくする。
 
 PlantUMLのハイライト、スニペット、VSCode上での生成などの機能を持つ。基本的には`Graphviz`がインストールされている環境でないと描画できない図が多い。
 
-#### vscode-icons
+#### Material Icon Theme
 
 vscodeのファイルやフォルダにアイコンを付けてファイルの種別を分かりやすくする。
 
@@ -279,12 +280,12 @@ Remote SSH か Remote Tunnels をインストールすると付いてくる。
 
 トンネル接続先の環境をVSCodeを利用できるようなる。
 
-### Web系()
+### Web系(効率化)
 
 `HTML`, `CSS`, `JavaScript`でフレームワークに依存しないものをカテゴライズします。有力なものでも入力補完を行う`IntelliCode`と`Path Intellisense`の拡張機能は、全般的なやつで紹介済みです。（他の言語でも効くため）
 
 ```bash
-code --install-extension formulahendry.auto-rename-tag --install-extension pranaygp.vscode-css-peek --install-extension vincaslt.highlight-matching-tag --install-extension ecmel.vscode-html-css --install-extension ritwickdey.LiveServer --install-extension xabikos.JavaScriptSnippets --install-extension christian-kohler.npm-intellisense --install-extension oouo-diogo-perdigao.docthis
+code --install-extension formulahendry.auto-rename-tag --install-extension pranaygp.vscode-css-peek --install-extension vincaslt.highlight-matching-tag --install-extension ecmel.vscode-html-css --install-extension ritwickdey.LiveServer --install-extension xabikos.JavaScriptSnippets --install-extension christian-kohler.npm-intellisense --install-extension oouo-diogo-perdigao.docthis --install-extension Orta.vscode-jest
 ```
 
 #### Auto Rename Tag
@@ -319,6 +320,10 @@ npmの入力補完が効くようになる。
 
 JavaScript及びTypeScriptのドキュメントコードを生成できる拡張機能。
 
+#### Jest
+
+JavaScript及びTypeScriptのテストであるJestと連携する拡張機能。vscodeのUI上にテスト結果を表示したりすることができる。
+
 ### Web系(Linter, Formatter)
 
 ```bash
@@ -345,11 +350,15 @@ CSSのLinterとなる。拡張機能だけで動くことは無く、ワーク�
 
 自動で探せない場合や何らかの理由で特定場所のStylelintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
 
+Prettierと併用する場合は`stylelint-config-prettier`を導入して競合ルールを除外すること。
+
 #### ESLint
 
 JavaScriptやTypeScriptのLinterとなる。拡張機能だけで動くことは無く、ワークスペースにESLintがインストールされているかを確認して自動でVSCodeと連携してくれる。（ちなみにワークスペースに無い場合はグローバルも探してくれる）
 
 自動で探せない場合や何らかの理由で特定場所のESLintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
+
+Prettierと併用する場合は`eslint-config-prettier`を導入して競合ルールを除外すること。
 
 #### Prettier
 
@@ -360,6 +369,15 @@ settings.jsonに設定を書いても良いが、`prettierrc`系のファイル�
 何らかの理由で特定場所のESLintモジュールやConfigファイルを指定したい場合ははsettings.jsonにカスタムPathを記述することもできる。
 
 JSはシングルクォート、JSXはダブルクォートがベストプラクティスではあるので、カスタム設定がおすすめとなる。
+
+ここでの.prettierrcファイルは明示できるものはなるべく明示したうえで、明示すると不都合の出る設定と影響範囲がかなり限定的な設定を省いた。
+
+- Range：ファイル内でフォーマットする行数の範囲
+   - まず変えることが無いうえ、InfinityがJSONファイル等に入らないので除外
+- Parser, File Path：Parserを指定する時に必要
+   - 使わないときは明示的に書けないので除外
+- Vue files script and style tags indentation：VueのScript及びStyleのタグ内をインデントするかどうか
+   - Vueフレームワークでのみ使う限定的ポジションなので除外。Vue使う時は明示的に書いても良い
 
 ### Terraform
 
